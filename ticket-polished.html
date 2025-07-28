@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Ticket</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ticket-card-polished {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 20px;
+      padding: 20px;
+      font-family: inherit;
+    }
+
+    .ticket-header {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #222;
+    }
+
+    .event-name {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .event-date,
+    .event-venue,
+    .event-location {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .ticket-details {
+      display: flex;
+      justify-content: space-around;
+      margin: 16px 0;
+      text-align: center;
+    }
+
+    .ticket-details div {
+      font-size: 13px;
+    }
+
+    .qr-area {
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .qr-area img {
+      width: 80%;
+      max-width: 320px;
+      border-radius: 8px;
+    }
+
+    .ticket-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .ticket-actions .action {
+      flex: 1;
+      padding: 12px;
+      background-color: #0071ce;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .verified-info {
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .verified-info img {
+      width: 20px;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticket-card-polished">
+    <div class="ticket-header">
+      <div class="event-name">LE SSERAFIM - 2025 EASY CRAZY HOT TOUR</div>
+      <div class="event-date">Sun, Sep 14, 7:30 PM</div>
+      <div class="event-venue">Bill Graham Civic Auditorium</div>
+      <div class="event-location">99 Grove St, San Francisco, CA</div>
+    </div>
+
+    <div class="ticket-details">
+      <div><strong>Section</strong><br>3</div>
+      <div><strong>Row</strong><br>E</div>
+      <div><strong>Seat</strong><br>5, 6, 7</div>
+    </div>
+
+    <div class="qr-area">
+      <img src="ticketpic.png" alt="QR Code or Ticket Image" />
+    </div>
+
+    <div class="ticket-actions">
+      <button class="action transfer">Transfer</button>
+      <button class="action sell">Sell</button>
+    </div>
+
+    <div class="verified-info">
+      <img src="ticket.png" alt="Verified Icon" />
+      <span>ticketmaster.verified</span>
+    </div>
+  </div>
+
+</body>
+</html>
