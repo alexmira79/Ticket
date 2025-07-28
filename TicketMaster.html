@@ -16,10 +16,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
   background-color: #fff;
   color: #000;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .header {
@@ -1897,18 +1896,19 @@ if (countDisplay) {
 }
 
 // ✅ Re-enable scroll tracking
-setupCarouselScrollTracking();
+setupCarouselScrollTracking()
 
 // ✅ Update MY TICKETS (X) label
-const ticketsTab = document.getElementById('ticketsTab');
+const ticketCountSpan = document.getElementById('ticketCount');
 const cards = document.querySelectorAll('.ticket-card');
-if (ticketsTab) {
-  const ticketLabel = cards.length === 1 ? 'MY TICKETS (1)' : `MY TICKETS (${cards.length})`;
-  ticketsTab.textContent = ticketLabel;
-  console.log("✅ Updated tab to:", ticketLabel);
+
+if (ticketCountSpan) {
+  ticketCountSpan.textContent = cards.length;
+  console.log("✅ Updated ticket count to", cards.length);
 } else {
-  console.warn("⚠️ #ticketsTab not found in DOM");
+  console.warn("⚠️ #ticketCount span not found in DOM");
 }
+
 
   function updateTicketCount() {
     const count = document.querySelectorAll('.ticket-card').length;
