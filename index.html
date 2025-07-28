@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticketmaster Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- TOP DARK SECTION -->
+    <div class="top-bar">
+
+      <!-- Centered Logo -->
+      <div class="top-logo">
+        <img src="https://logos-world.net/wp-content/uploads/2024/04/Ticketmaster-Logo.png" alt="Ticketmaster" class="logo-img" />
+      </div>
+
+      <!-- Location and Date Row -->
+      <div class="location-date-row">
+        <span class="icon-label">
+          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="icon" alt="Location" />
+          City or Zip Code
+        </span>
+        <span class="separator">|</span>
+        <span class="icon-label">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="icon" alt="Date" />
+          All Dates
+        </span>
+      </div>
+
+      <!-- Underline -->
+      <div class="underline"></div>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <input type="text" placeholder="Search by artist, event, or venue" />
+        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" class="search-icon" alt="Search" />
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-scroll">
+        <div class="category-tab">Concerts</div>
+        <div class="category-tab">Sports</div>
+        <div class="category-tab">Arts, Theater & Comedy</div>
+        <div class="category-tab">Family</div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="screen-discover" class="screen active">
+      <div class="section-title">Trending Events</div>
+      <div class="event-card">
+        <img src="event.jpg" class="event-image" alt="Event Image" />
+        <div class="event-details">
+          <div class="event-title">Le Sserafim</div>
+          <div class="event-sub">Sep 14 • Bill Graham Civic Auditorium</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+      <div class="tab active">
+        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Discover" class="nav-icon" />
+        <div class="tab-label">Discover</div>
+      </div>
+      <div class="tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="For You" class="nav-icon" />
+        <div class="tab-label">For You</div>
+      </div>
+      <div class="tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892458.png" alt="My Events" class="nav-icon" />
+        <div class="tab-label">My Events</div>
+      </div>
+      <div class="tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png" alt="Sell" class="nav-icon" />
+        <div class="tab-label">Sell</div>
+      </div>
+      <div class="tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Account" class="nav-icon" />
+        <div class="tab-label">Account</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
