@@ -314,19 +314,16 @@ max-width: 280px;
 }
 
 .actions {
-  position: fixed;
-  bottom: 24px;
-  left: 20px;
-  right: 20px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px;
+  padding: 16px 20px;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: none !important;
-  border: none !important;        /* ✅ remove border */
-  border-top: none !important;    /* ✅ ensure no top line */
+  border-top: 1px solid #ddd;
   z-index: 999;
 }
 
