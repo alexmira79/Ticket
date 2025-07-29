@@ -361,26 +361,28 @@ max-width: 280px;
 
 
 
-/* ✅ UPDATED Transfer Panel Styles */
+/* ✅ UPDATED Transfer Panel Styles - Ticketmaster Style */
 .transfer-panel {
   position: fixed;
   bottom: -100%;
   left: 0;
   right: 0;
-  height: 66%;
+  height: 85vh; /* Taller, more centered panel */
+  max-height: 700px;
   background: #fff;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.15);
   transition: bottom 0.35s ease;
   z-index: 100;
   display: flex;
   flex-direction: column;
-  padding: 0; /* Header already has its own padding */
+  padding: 24px 20px 0; /* Top padding for content spacing */
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
+
 
 .transfer-panel.active {
   bottom: 0;
@@ -1070,6 +1072,14 @@ textarea {
 .hidden {
   display: none;
 }
+.drag-bar {
+  width: 40px;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+  margin: 10px auto 16px;
+}
+
   
 </style>
 
@@ -1343,6 +1353,9 @@ textarea {
 
 <!-- ✅ Transfer Slide-Up Panel -->
 <div class="transfer-panel" id="transferPanel">
+  
+  <div class="drag-bar"></div>
+
   <!-- 🔷 Header -->
   <div class="transfer-header">
     <div class="transfer-title">SELECT TICKET TO TRANSFER</div>
