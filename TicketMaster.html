@@ -1888,6 +1888,7 @@ function setupCarouselScrollTracking() {
 
 // ✅ Update seat buttons in transfer panel
 updateSeatButtons(seatList);
+updateTicketCount();
 
 // ✅ Update ticket count label in transfer panel
 const ticketCountLabel = document.querySelector('#transferPanel .seat-row .ticket-count');
@@ -1905,26 +1906,23 @@ if (countDisplay) {
 // ✅ Re-enable scroll tracking
 setupCarouselScrollTracking()
 
-// ✅ Update MY TICKETS (X) label
-const ticketCountSpan = document.getElementById('ticketCount');
-const cards = document.querySelectorAll('.ticket-card');
-
-if (ticketCountSpan) {
-  ticketCountSpan.textContent = cards.length;
-  console.log("✅ Updated ticket count to", cards.length);
-} else {
-  console.warn("⚠️ #ticketCount span not found in DOM");
+// ✅ Reusable function to update MY TICKETS (X) label
+function updateTicketCount() {
+  const count = document.querySelectorAll('.ticket-card').length;
+  const countSpan = document.getElementById('ticketCount');
+  if (countSpan) {
+    countSpan.textContent = count;
+    console.log("✅ Updated ticket count to", count);
+  } else {
+    console.warn("⚠️ #ticketCount span not found in DOM");
+  }
 }
 
-
-  function updateTicketCount() {
-    const count = document.querySelectorAll('.ticket-card').length;
-    const countSpan = document.getElementById('ticketCount');
-    if (countSpan) countSpan.textContent = count;
-  }
-
-  document.addEventListener("DOMContentLoaded", updateTicketCount);
-
+// ✅ Run once everything (including JS-rendered cards) is fully loaded
+window.onload = () => {
+  updateTicketCount();
+  setupCarouselScrollTracking(); // re-enable scroll dots too
+};
 
 
 
