@@ -1277,7 +1277,7 @@ textarea {
 </div>
 
 <!-- ⚙️ Admin Slide-Up Panel -->
-<div class="admin-slideup" id="adminSlideUp">
+<div class="admin-slideup hidden" id="adminSlideUp">
   <div class="admin-header">
     Admin Panel
     <span class="close-btn" onclick="closeAdmin()">Close</span>
@@ -1618,12 +1618,13 @@ function goBack() {
 // ✅ Bind Transfer Buttons
 function bindInteractiveButtons() {
   document.querySelectorAll('.view-ticket').forEach(btn => {
-    btn.onclick = (e) => {
-      const card = e.target.closest('.ticket-card');
+    btn.onclick = function () {
+      const card = this.closest('.ticket-card');
       if (card) openTransferPanel(card);
     };
   });
 }
+
 
 // ✅ Final Transfer Button
 if (transferFinalBtn) {
@@ -1664,13 +1665,20 @@ if (closeTransferBtn) {
 
 function openAdmin() {
   const panel = document.getElementById('adminSlideUp');
-  if (panel) panel.classList.add('active');
+  if (panel) {
+    panel.classList.remove('hidden');  // 👈 make sure it's visible
+    panel.classList.add('active');
+  }
 }
 
 function closeAdmin() {
   const panel = document.getElementById('adminSlideUp');
-  if (panel) panel.classList.remove('active');
+  if (panel) {
+    panel.classList.remove('active');
+    panel.classList.add('hidden');  // 👈 hide it again
+  }
 }
+
 
 // ✅ Generate Seat Inputs Based on Ticket Count
 function renderSeatInputs() {
@@ -1861,6 +1869,12 @@ if (countDisplay) {
 // ✅ Re-enable scroll tracking
 setupCarouselScrollTracking()
 
+
+
+
+  // Close admin panel
+  closeAdmin();
+}
 // ✅ Reusable function to update MY TICKETS (X) label
 function updateTicketCount() {
   const count = document.querySelectorAll('.ticket-card').length;
@@ -1878,12 +1892,6 @@ window.onload = () => {
   updateTicketCount();
   setupCarouselScrollTracking(); // re-enable scroll dots too
 };
-
-
-
-  // Close admin panel
-  closeAdmin();
-}
 
 // ✅ Initial setup
 document.addEventListener('DOMContentLoaded', () => {
