@@ -1832,21 +1832,6 @@ function updateEventInfo() {
     seatRowDisplay.textContent = `Sec ${section}, Row ${row}`;
   }
 
-function setupCarouselScrollTracking() {
-  const carousel = document.querySelector('.ticket-carousel');
-  const dots = document.querySelectorAll('.dot');
-
-  if (!carousel || dots.length === 0) return;
-
-  carousel.addEventListener('scroll', () => {
-    const scrollLeft = carousel.scrollLeft;
-    const cardWidth = carousel.querySelector('.ticket-card')?.offsetWidth || 1;
-    const index = Math.round(scrollLeft / cardWidth);
-
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[index]) dots[index].classList.add('active');
-  });
-}
 
 
 // ✅ Update seat buttons in transfer panel
@@ -1893,11 +1878,6 @@ window.onload = () => {
   setupCarouselScrollTracking(); // re-enable scroll dots too
 };
 
-// ✅ Initial setup
-document.addEventListener('DOMContentLoaded', () => {
-  setupCarouselScrollTracking();
-  bindInteractiveButtons();
-});
 
 
 </script>
