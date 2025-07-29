@@ -1484,56 +1484,6 @@ textarea {
 </div>
 
 
-<div class="admin-slideup" id="adminSlideUp">
-  <div class="admin-header">
-    Admin Panel
-    <span class="close-btn" onclick="closeAdmin()">Close</span>
-  </div>
-
-  <div class="instruction">Edit event details below:</div>
-
-  <div class="admin-form">
-    <label>Event Title:
-      <input type="text" id="eventTitleInput" placeholder="e.g. LE SSERAFIM Tour">
-    </label>
-
-    <label>Event Date:
-      <input type="text" id="eventDateInput" placeholder="e.g. Sun, Sep 14, 7:30pm">
-    </label>
-
-    <label>Venue:
-      <input type="text" id="eventVenueInput" placeholder="e.g. Bill Graham Civic Auditorium">
-    </label>
-
-   <label>Upload Image:
-  <input type="file" id="eventImageUpload" accept="image/*">
-</label>
-
-
-    <div class="upload-placeholder">
-      <div class="upload-icon">📤</div>
-      <div>Paste your image URL above to update the ticket picture</div>
-    </div>
-
-<!-- ✅ Save Changes Button -->
-<button onclick="updateEventInfo()" style="width: 100%; margin-top: 20px; background: #111; color: white; border: none; padding: 12px; font-size: 16px; border-radius: 10px;">
-  Save Changes
-</button>
-
-<!-- 🗑️ Toggle Delete Ticket Section -->
-<button onclick="toggleDeleteDropdown()" style="width: 100%; margin-top: 12px; background: #f44336; color: white; padding: 10px; font-size: 15px; border: none; border-radius: 10px;">
-  Delete a Ticket
-</button>
-
-<!-- 🗑️ Hidden Delete Ticket Section -->
-<div id="deleteTicketSection" style="display: none; margin-top: 16px;">
-  <label for="deleteTicketSelect" style="font-size: 14px;">Select ticket to delete:</label>
-  <select id="deleteTicketSelect" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; font-size: 14px;"></select>
-
-  <button onclick="confirmDeleteTicket()" style="background: crimson; color: white; width: 100%; padding: 12px; font-size: 15px; border: none; border-radius: 10px;">
-    Confirm Delete
-  </button>
-</div>
 
 
 <script>
@@ -1584,11 +1534,12 @@ function openTransferPanel(card) {
   const row = card.dataset.row || '-';
   const seats = (card.dataset.seats || '').split(',');
 
-  // ✅ Update section + row label
-  const seatRowDisplay = document.querySelector('.transfer-top .row-label');
-  if (seatRowDisplay) {
-    seatRowDisplay.textContent = `Sec ${sec}, Row ${row}`;
-  }
+  // ✅ Update section + row label in the visible transfer panel
+const seatRowDisplay = document.querySelector('.seat-row .section-row');
+if (seatRowDisplay) {
+  seatRowDisplay.textContent = `Sec ${sec}, Row ${row}`;
+}
+
 
   // ✅ Update ticket count label in transfer panel
   const ticketCountLabel = document.querySelector('.seat-row .ticket-count');
